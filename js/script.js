@@ -45,17 +45,10 @@ botArrow.addEventListener('click',function(){
   itemsCollecion[counterImg].classList.remove('hide');
 });
 
+
+// LOOP IMMAGINI OGNI 3 SECONDI
 let counter = 0;
-
-
 const loop = () =>{
-    // counter--;
-    // output.innerHTML = counter;
-    // if(counter < 0){
-    //     clearInterval(countDown);
-    //     output.innerHTML = 'fine';
-    // } 
-
     itemsCollecion[counter].classList.add('hide');
     
     counter++;
@@ -67,3 +60,24 @@ const loop = () =>{
         
 }
 const countDown = setInterval(loop, 3000);
+
+// FACCIO RIPARTIRE IL LOOP QUANDO PASSO IL MOUSE SOPRA
+itemsWrapper.addEventListener('mouseover', function(){
+  clearInterval(countDown);
+});
+
+// FACCIO RIPARTIRE IL LOOP QUANDO TOLGO IL MOUSE 
+itemsWrapper.addEventListener('mouseout', function(){
+  const loopOut = () =>{
+    itemsCollecion[counter].classList.add('hide');
+    
+    counter++;
+    if(counter > images.length - 1){
+      counter = 0;
+    }
+    itemsCollecion[counter].classList.remove('hide');
+  
+        
+}
+const countDown = setInterval(loopOut, 3000);
+});
