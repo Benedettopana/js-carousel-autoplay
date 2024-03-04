@@ -61,7 +61,7 @@ const loop = () =>{
 }
 const countDown = setInterval(loop, 3000);
 
-// FACCIO RIPARTIRE IL LOOP QUANDO PASSO IL MOUSE SOPRA
+// FACCIO FERMARE IL LOOP QUANDO PASSO IL MOUSE SOPRA
 itemsWrapper.addEventListener('mouseover', function(){
   clearInterval(countDown);
 });
