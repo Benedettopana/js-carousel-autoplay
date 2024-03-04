@@ -59,12 +59,11 @@ const loop = () =>{
     itemsCollecion[counter].classList.add('hide');
     
     counter++;
-    if(counter < 0){
-      counter = images.length - 1;
+    if(counter > images.length - 1){
+      counter = 0;
     }
     itemsCollecion[counter].classList.remove('hide');
   
         
 }
-
 const countDown = setInterval(loop, 3000);
