@@ -44,3 +44,27 @@ botArrow.addEventListener('click',function(){
   }
   itemsCollecion[counterImg].classList.remove('hide');
 });
+
+let counter = 0;
+
+
+const loop = () =>{
+    // counter--;
+    // output.innerHTML = counter;
+    // if(counter < 0){
+    //     clearInterval(countDown);
+    //     output.innerHTML = 'fine';
+    // } 
+
+    itemsCollecion[counter].classList.add('hide');
+    
+    counter++;
+    if(counter < 0){
+      counter = images.length - 1;
+    }
+    itemsCollecion[counter].classList.remove('hide');
+  
+        
+}
+
+const countDown = setInterval(loop, 3000);
